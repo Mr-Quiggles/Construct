@@ -1,0 +1,37 @@
+{
+	"<DISCORD BOT ID>" : {
+		"name": "Stratos",
+		"server": {
+			"enabled": true,
+			"hostname": "stratos.bambis.cat",
+			"port": 18004
+		},
+		"enabled": true,
+		"email": "<EMAIL>",
+		"password": "<PASSWORD>",
+		"token": "<TOKEN>",
+		"permissions": {
+			"priority": "user",
+			"users" : {
+				"*" : {
+					"mode" : "blacklist",
+					"priority": true,
+					"fallback": false,
+					"matches" : [
+						".*"
+					]
+				}
+			},
+			"servers": {
+				"*": {
+					"mode": "blacklist",
+					"priority": true,
+					"fallback": false,
+					"matches": [
+						".*"
+					]
+				}
+			}
+		}
+	}
+}
