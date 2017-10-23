@@ -1,4 +1,4 @@
-[My Construct bot](https://construct.bambis.cat/)
+[My Construct bot](https://ygo.apoq.li/)
 
 ##Installation and usage
 The entire bot requires [Node.js](https://nodejs.org/en/download/) to run. A list of required modules to install are under `/node_modules/required.md`.
@@ -35,11 +35,11 @@ Under `/data/bots.json` is a list of bots available for use. You can connect to 
 
 **Landing Page** `/` or `/help`
 
-Both the main page and `/help` land you to a page containing a """console""" (type in commands, and the results are pasted into the top box), and a box with a list of ""commands"" (they're just API calls; paste any in front of `construct.bambis.cat` to run it). It also doubles as a help page for the Discord side of Construct, but for these purposes, its irrelevant.
+Both the main page and `/help` land you to a page containing a """console""" (type in commands, and the results are pasted into the top box), and a box with a list of ""commands"" (they're just API calls; paste any in front of `ygo.apoq.li` to run it). It also doubles as a help page for the Discord side of Construct, but for these purposes, its irrelevant.
 
 Within the list of commands, are a usage guide, and a summary on what the command does. Parameters that are required are surrounded with curly brackets (`{name}`), while optional parameters are surrounded with parentheses (`(name)`).
 
-**Yugioh Card Lookup** `/ygo?name={card}` __Example__: [https://construct.bambis.cat/ygo?name=Pot of Memes](https://construct.bambis.cat/ygo?name=Pot+of+Memes)
+**Yugioh Card Lookup** `/ygo?name={card}` __Example__: [https://ygo.apoq.li/ygo?name=Pot of Memes](https://ygo.apoq.li/ygo?name=Pot+of+Memes)
 The bread and butter of Construct. This command does some dark magic to get the first result from the Yugioh wikia, and *hopefully* it's an actual card. If I had an always up to date card database (like ygopro's `cards.cdb`), then I wouldn't need to do a meticulous search, and instead can do a MySQL query (like I do with `.ydk`). I might be able to with DevPro since Percy's beta-cards aren't actually stored back into `cards.cdb`. Oh well.
 
 It pretty much JSONifies a card page, making it nice and neat to use for other commands.
@@ -50,7 +50,7 @@ In another Discord server, one channel was dedicated to returning a *minion meme
 
 `?html` just embeds the HQ card image stored on my server. Sometimes it's there, but other times, if it's a new card, is the disgusting (anti-)Anteatereatingant sized thumbnail.
 
-**Ygopro Deck Printer** `/ydk?url={URL}&format=(compact|expanded)` __Example__: [https://construct.bambis.cat/ydk?url=https://bambis.cat/uf/sh/access/?h=0e9499b50e5939116c3e697fc2369dba](https://construct.bambis.cat/ydk?url=https://bambis.cat/uf/sh/access/?h=0e9499b50e5939116c3e697fc2369dba)
+**Ygopro Deck Printer** `/ydk?url={URL}&format=(compact|expanded)` __Example__: [https://ygo.apoq.li/ydk?url=https://apoq.li/uf/sh/access/?h=0e9499b50e5939116c3e697fc2369dba](https://ygo.apoq.li/ydk?url=https://apoq.li/uf/sh/access/?h=0e9499b50e5939116c3e697fc2369dba)
 
 The plate and butter knife of Construct. Usually when my friends share a deck, it's some disgusting screencap of ygopro with the default (anti-)Anteatereatingant-sized thumbnails. Yuck! While I usually can tell what a card is by it's art, the thumbnail size makes it harder to discern. Well, now with this command, it'll make a readable list out of your `.ydk`s for ease of sharing! Sadly, I still need to stop being lazy and make it retain the card order from the `.ydk`. That'll involve writing my own `JSON.stringify` I guess, but it'll be worth it.
 
@@ -59,7 +59,7 @@ The plate and butter knife of Construct. Usually when my friends share a deck, i
 `expanded` is used for the jam of Construct, which I'll get to later. It just provides extra properties for other uses.
 
 **Yugioh Price lookup** `/ygoprices?name={name}` __Example__:
-[https://construct.bambis.cat/ygoprices?name=Pot of Memes](https://construct.bambis.cat/ygoprices?name=Pot+of+Memes)
+[https://ygo.apoq.li/ygoprices?name=Pot of Memes](https://ygo.apoq.li/ygoprices?name=Pot+of+Memes)
 
 I didn't like how Yugiohprice's API was for card lookup. It requires an ***exact*** name for price lookup, and the mess of giving price data. Really, why are there multiple statuses I need to check? Why list `C-Crush Wyvern` when it's price data is unavailable? No shit it's unavailable.
 
@@ -68,7 +68,7 @@ Anyways, like `.ygo`, it'll query the Yugioh wiki for the full card name, then u
 
 #Last but certainly not least
 
-**Yugioh Deck Pricing** `/ydkprice?url={URL}&use=(min|max|average)&mode=(ydk|json|guess)&booji` __Example__: [https://construct.bambis.cat/ydkprice?url=https://bambis.cat/uf/sh/access/?h=0e9499b50e5939116c3e697fc2369dba&booji](https://construct.bambis.cat/ydkprice?url=https://bambis.cat/uf/sh/access/?h=0e9499b50e5939116c3e697fc2369dba&booji)
+**Yugioh Deck Pricing** `/ydkprice?url={URL}&use=(min|max|average)&mode=(ydk|json|guess)&booji` __Example__: [https://ygo.apoq.li/ydkprice?url=https://apoq.li/uf/sh/access/?h=0e9499b50e5939116c3e697fc2369dba&booji](https://ygo.apoq.li/ydkprice?url=https://apoq.li/uf/sh/access/?h=0e9499b50e5939116c3e697fc2369dba&booji)
 
 What a feature packed URI string! This is the kitchen to Construct. Soon, I might sell a bunch of my decks that I'm not using (Yang Zincs got too hyped, but I got sick of them because they're a one-trick pony), and instead of having pen(cil) and paper to calculate it's value, why not have Construct do it for me? What a lovely wife.
 
